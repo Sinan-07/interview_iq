@@ -449,3 +449,29 @@ nav .fa-solid{
     
 
 }
+
+/* Add these styles to your existing CSS file or create a new one */
+
+#startButton {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 15px 20px; /* Add padding to the button */
+    font-size: 16px; /* Set the font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    margin-left: 125px;
+    margin-top:25px;
+}
+
+#startButton:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
+.subanother{
+    justify-content: center;
+    align-items: center;
+}
+.keerthan{
+    margin-left:35%;
+}

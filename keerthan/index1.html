@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/2e15e7fa97.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div id="header">
+        <div class="contianer">
+            <nav>
+                <img src="../static/asset/Keerthan..png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Take interview</a></li>
+                    <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm Interview<span>IQ </span><br><span id="keerthu">Empowering  Careers through AI-Driven Interview Mastery</span> </h1>
+            </div>
+        </div>
+    </div>
+
+    <!----------ABOUT---------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="../static/asset/2.webp" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Us</h1>
+                    <p class="k">Welcome to the future of interview readiness – our AI-powered interview preparation tool is a groundbreaking solution designed to empower job seekers and streamline the hiring process for HR professionals. Our mission is to redefine the way candidates prepare for interviews and assist HR teams in identifying top talent efficiently. We aim to bridge the gap between traditional preparation methods and the evolving demands of today's dynamic job market.
+                    </p>
+                    
+                    
+                    <!-- <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div> -->
+                    <!-- <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>Data Analysing</span><br>Building a Model for a Dataset</li>
+                        </ul>
+                    </div> -->
+                    <!-- <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Web Development</span><br>Worked as a intern in Codesoft</li>
+                            <li><span>Data Analysing</span><br>Worked as intern in CoE Digital Forensics Intelligence and Cyber Security Sahyadri</li>
+                            
+                        </ul>
+                    </div> -->
+
+
+
+                    <!-- <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>12/2021 - Current</span><br>Bachelor of Engineering at Sahyadri College of Engineering and Management (Autonomous)</li>
+                            <li><span>2019 - 2021</span><br>Pre-University College grom St Aloysius Pre-University College</li>
+                            <li><span>2018 - 2019</span><br>SSLC  from Kerala Samajam English Medium High School</li>
+                        </ul>
+                    </div> -->
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-----------------------------------services------>
+    <div class="container keerthan">
+    <div class="services" id="services">
+        <div class="container">
+            <h1 class="sub-title subanother">Take Interview</h1>
+            <button id="startButton" onclick="startVideoStream()">Start</button>
+            <img id="video-stream" style="display: none;" src="{{ url_for('video_feed') }}" alt="Video Stream">
+        </div>
+    </div>
+    </div>
+    <!----------contact form ------------------------------------------------------>
+    <div id="contact">
+        <div class="contianer">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact us</h1>
+                    <p><i class="fa-regular fa-paper-plane"></i>Interviewiq@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>9036120487</p>
+                    <div class="social-icons">
+                        <a><i class="fa-brands fa-facebook"></i></a>
+                        <a><i class="fa-brands fa-instagram"></i></a>
+                        <a><i class="fa-brands fa-linkedin"></i></a>
+                        <a><i class="fa-brands fa-github"></i></a>
+                        
+                    </div>
+                    <!-- <a href="./assets/Keerthan's Resume (2).pdf" download class="btn btn2">Download CV</a> -->
+    
+                </div>
+                <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message"  rows="6" placeholder="Type your message here..." required></textarea>
+                    <button type="sumbit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © InterviewIQ</p>
+    </div>
+    </div>
+    
+
+    <script>
+        // Your existing scripts here...
+
+        var videoStream = document.getElementById("video-stream");
+        var startButton = document.getElementById("startButton");
+
+        function startVideoStream() {
+            videoStream.src = "{{ url_for('video_feed') }}";
+            videoStream.style.display = "block";
+            startButton.style.display = "none";
+        }
+    </script>
+</body>
+</html>
+

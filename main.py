@@ -84,6 +84,9 @@
 # # Release the webcam resources
 # webcam.release()
 # cv2.destroyAllWindows()
+
+
+
 from flask import Flask, render_template, Response
 import cv2
 from gaze_tracking import GazeTracking
@@ -127,7 +130,7 @@ def generate_frames():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index1.html')
 
 @app.route('/video_feed')
 def video_feed():
